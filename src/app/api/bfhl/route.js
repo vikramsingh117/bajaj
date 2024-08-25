@@ -29,9 +29,9 @@ export async function POST(request) {
     // Define the response payload
     const responsePayload = {
       is_success: true,
-      user_id: "vikramsingh", // Replace with dynamic user_id if needed
-      email: "vikramandanshu@gmail.com",        // Replace with dynamic email if needed
-      roll_number: "21BPS1615",       // Replace with dynamic roll number if needed
+      user_id: "vikramsingh", 
+      email: "vikramandanshu@gmail.com",   
+      roll_number: "21BPS1615",    
       numbers: numbers,
       alphabets: alphabets,
       highest_lowercase_alphabet: highestLowercase,

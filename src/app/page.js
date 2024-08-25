@@ -54,36 +54,50 @@ export default function Home() {
     if (!responseData || selectedOptions.length === 0) return null;
 
     return selectedOptions.map(option => (
-      <div key={option.value}>
-        <h3>{option.label}</h3>
-        <pre>{JSON.stringify(responseData[option.value], null, 2)}</pre>
+      <div key={option.value} style={{ marginTop: '20px' }}>
+        <h3 style={{ color: '#333' }}>{option.label}</h3>
+        <pre style={{ background: '#f4f4f4', padding: '10px', borderRadius: '5px' }}>
+          {JSON.stringify(responseData[option.value], null, 2)}
+        </pre>
       </div>
     ));
   };
 
   return (
-    <div style={{ padding: '20px' }}>
-      <h1>Enter JSON Input</h1>
-      <textarea 
-        value={jsonInput} 
-        onChange={handleInputChange} 
-        rows="5" 
-        style={{ width: '100%', padding: '10px' }} 
-        placeholder='{"data": ["A", "C", "z"]}'
+    <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto', fontFamily: 'Arial, sans-serif' }}>
+      <h1 style={{ color: '#0070f3' }}>Enter JSON Input</h1>
+      <textarea
+        value={jsonInput}
+        onChange={handleInputChange}
+        rows="5"
+        style={{ width: '100%', padding: '10px', fontSize: '16px', borderRadius: '5px', border: '1px solid #ddd' }}
+        placeholder='{
+  "data": ["1", "2", "3", "a", "b", "C", "d"]
+}'
       />
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      <button onClick={handleSubmit} style={{ marginTop: '10px', padding: '10px 20px' }}>
+      {error && <p style={{ color: 'red', fontWeight: 'bold' }}>{error}</p>}
+      <button onClick={handleSubmit} style={{ marginTop: '10px', padding: '10px 20px', backgroundColor: '#0070f3', color: '#fff', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>
         Submit
       </button>
 
       {responseData && (
         <>
-          <h2>Select Response Data</h2>
+          <h2 style={{ color: '#0070f3' }}>Select Response Data</h2>
           <Select
             isMulti
             options={options}
             onChange={handleSelectChange}
             closeMenuOnSelect={false}
+            styles={{
+              container: (provided) => ({
+                ...provided,
+                marginTop: '10px',
+              }),
+              menu: (provided) => ({
+                ...provided,
+                zIndex: 9999,
+              }),
+            }}
           />
           <div style={{ marginTop: '20px' }}>
             {renderResponse()}
