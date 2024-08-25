@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/bfhl",
+      "destination": "/api/bfhl",
+      "permanent": true
+    }
+  ]
+}
