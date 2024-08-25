@@ -58,6 +58,8 @@ export default function RootLayout({ children }) {
             <code>https://bajaj-mocha-delta.vercel.app/api/bfhl</code>
             <p>NOT</p>
             <code>https://bajaj-mocha-delta.vercel.app/bfhl</code>
+            <p>The link gets redirected from vercel.json file, I had submitted the form before with API link, hence this workaround</p>
+
           </div>
         </div>
       </body>
